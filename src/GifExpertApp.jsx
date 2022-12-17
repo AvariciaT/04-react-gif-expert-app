@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { AddCategory, GifGrid } from './components';
+import './GitExpertApp.css';
 
 export const GifExpertApp = () => {
 
@@ -14,18 +15,25 @@ export const GifExpertApp = () => {
 
   return (
     <>
-      <h1>GifExpertApp: Valeria NGN</h1>
+      <h1>GifExpertApp:</h1>
       <AddCategory 
       onNewCategory={event=> onAddCategory(event)}
       />
+      
+      <div className='headSearch'>
+        <div className="buttonsSearch">
+          <input className="buttonsSearch__item buttonsSearch__deleteAll" type="submit" value="Delete All" />          
+        </div>  
+      </div>
+      
       {
       // categories.map((category)=>{
       //     return (
       //       <li key={ category }> { category } </li>
       //     )
       //   })
-      categories.map((category)=> ( 
-          <GifGrid key={category} category={category} />
+      categories.map(( category )=> ( 
+          <GifGrid key={category} category={category} categories={categories} setCategories={setCategories}/>  
         ))
       }
     </>
