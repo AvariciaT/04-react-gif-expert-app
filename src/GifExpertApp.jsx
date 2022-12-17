@@ -24,8 +24,9 @@ export const GifExpertApp = () => {
 
   }
   function handleDeleteAll(event) {
+    if (categories.length == 0) return;
     setCategories([]);
-    console.log('Eliminados:',categories);
+    // console.log('Eliminados:',categories);
   }
 
   return (
