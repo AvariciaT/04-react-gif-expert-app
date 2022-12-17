@@ -23,6 +23,10 @@ export const GifExpertApp = () => {
     // console.log('Quedan:', newListCategories);
 
   }
+  function handleDeleteAll(event) {
+    setCategories([]);
+    console.log('Eliminados:',categories);
+  }
 
   return (
     <>
@@ -33,7 +37,7 @@ export const GifExpertApp = () => {
       
       <div className='headSearch'>
         <div className="buttonsSearch">
-          <input className="buttonsSearch__item buttonsSearch__deleteAll" type="submit" value="Delete All" />          
+          <input className="buttonsSearch__item buttonsSearch__deleteAll" type="submit" value="Delete All" onClick={ (event) => handleDeleteAll(event) } />          
         </div>  
       </div>
       
