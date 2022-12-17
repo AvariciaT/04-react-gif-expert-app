@@ -9,8 +9,19 @@ export const GifExpertApp = () => {
   const onAddCategory = (newCategory) =>{
     
     if (categories.includes(newCategory)) return;
-    setCategories([newCategory, ...categories]);     
+    const temp = [...categories];
+    temp.unshift(newCategory);
+    setCategories(temp);
+    // setCategories([newCategory, ...categories]);     
     // setCategories((categories)=>[inputValue,...categories]);    
+  }
+
+  function handleDelete(nameCategoryItem) {
+    
+    const newListCategories = categories.filter( element => element != nameCategoryItem);
+    setCategories(newListCategories);
+    // console.log('Quedan:', newListCategories);
+
   }
 
   return (
@@ -32,9 +43,7 @@ export const GifExpertApp = () => {
       //       <li key={ category }> { category } </li>
       //     )
       //   })
-      categories.map(( category )=> ( 
-          <GifGrid key={category} category={category} categories={categories} setCategories={setCategories}/>  
-        ))
+      categories.map(( category )=> ( <GifGrid key={category} category={category} onDelete={handleDelete} /> )) 
       }
     </>
   )

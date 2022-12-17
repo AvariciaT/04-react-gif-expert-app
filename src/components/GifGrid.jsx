@@ -2,18 +2,21 @@ import { useState, useEffect } from "react";
 
 import { GifGridItem } from "./GifGridItem.jsx";
 import { useFecthGifs } from "../hooks/useFecthGifs.js";
-import { DeleteCategory } from "./DeleteCategory.jsx";
 
-export const GifGrid = ({ category, categories, setCategories }) => {
+export const GifGrid = ({ category, onDelete }) => {
 
   const { images, isLoading } = useFecthGifs( category );
 
   return (
     <>
-        {/* opciones para borrar */}
+        {/* opcion para borrar */}
         <div className='headSearch'>
           <div className="headSearch__nameSearch">{ category }</div>  
-          <DeleteCategory category={ category } state={ false } categories={categories} setCategories={ setCategories }/>  
+          <div className="buttonsSearch">
+            <div className="buttonsSearch__item" onClick={ (e) => onDelete(category) }> 
+                <div className="buttonsSearch__delete close icon"></div>
+            </div>
+          </div>
         </div>
 
         {
@@ -25,7 +28,7 @@ export const GifGrid = ({ category, categories, setCategories }) => {
             images.map(( image )  => (
               <GifGridItem 
                 key={image.id}
-                // esparcir todos los elementos dentro de la 'image'.
+                // Esparcir todos los elementos dentro de la 'image'.
                 { ...image }
               />
             ))
