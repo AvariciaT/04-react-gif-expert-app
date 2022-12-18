@@ -34,7 +34,7 @@ export const GifExpertApp = () => {
       // posicion del elemento - 1: reemplazar, 0: agregar - valor
       newListCategoriesx.splice(categories.indexOf(nameCategorySection), 0, newNameSection);
       setCategories(newListCategoriesx);
-      console.log(newListCategoriesx);
+      // console.log(newListCategoriesx);
     }
 
   }
