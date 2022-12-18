@@ -3,11 +3,11 @@ import { useState } from "react"
 export const AddCategory = ({ onNewCategory }) => {
   
     const [inputValue, setInputValue] = useState('')
-  // captar la escritura
+    // Captar la escritura dentro del input
     const onInputChange = ({target}) => {
       setInputValue(target.value);
     };
-
+    // Enviar palabra para añadir una búsqueda
     const onSubmit = (event) => {
         event.preventDefault();
         if (inputValue.trim().length <= 1) return;

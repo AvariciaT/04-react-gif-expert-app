@@ -8,8 +8,10 @@ export const useFecthGifs = ( category ) => {
 
   const getImages = async () =>{
     const newImages= await getGifs(  category );
+    // if (newImages.length == 0) return;
     setImages(  newImages );
     setIsLoading( false );
+    
   }         
   // Efecto activado por default , al inicio
     useEffect( ()=> {
@@ -18,6 +20,7 @@ export const useFecthGifs = ( category ) => {
 
   return {
     images,
+    setImages,
     isLoading
   }
 }
