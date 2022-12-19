@@ -15,7 +15,7 @@ export const GifGrid = ({ category, onDeleteSection, onUpdateSection }) => {
   function handleDeleteCard(idCategoryItem) {
     const newListCategoriesItem = images.filter( element => element.id != idCategoryItem);
     setImages(newListCategoriesItem);
-    console.log('Quedan:', newListCategoriesItem);
+    // console.log('Quedan:', newListCategoriesItem);
   }
   // Captar la escritura dentro del input
   const onInputChangeSection = ({target}) => {
