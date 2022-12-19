@@ -59,11 +59,6 @@ export const GifExpertApp = () => {
       </div>
       
       {
-      // categories.map((category)=>{
-      //     return (
-      //       <li key={ category }> { category } </li>
-      //     )
-      //   })
       categories.map(( category )=> ( <GifGrid key={category} category={category} onDeleteSection={handleDeleteSection} onUpdateSection={handleUpdateSection} /> )) 
       }
     </>

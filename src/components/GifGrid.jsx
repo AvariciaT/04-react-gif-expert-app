@@ -6,7 +6,7 @@ import { useFecthGifs } from "../hooks/useFecthGifs.js";
 export const GifGrid = ({ category, onDeleteSection, onUpdateSection }) => {
 
   const { images, isLoading, setImages } = useFecthGifs( category );
-
+  
   const [inputValueSection, setInputValueSection] = useState(category);
   
   const [isEdit, setIsEdit] = useState(false);
